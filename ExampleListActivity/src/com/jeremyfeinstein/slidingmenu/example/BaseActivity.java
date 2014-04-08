@@ -30,8 +30,8 @@ public class BaseActivity extends SlidingFragmentActivity {
 		super.onCreate(savedInstanceState);
 
 		setTitle(mTitleRes);
-
-		// set the Behind View
+		// modify by hq_punan
+		// set the Behind View 
 		setBehindContentView(R.layout.menu_frame);
 		if (savedInstanceState == null) {
 			FragmentTransaction t = this.getSupportFragmentManager().beginTransaction();
