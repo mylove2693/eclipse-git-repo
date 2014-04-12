@@ -13,10 +13,20 @@
         android:layout_height="wrap_content"
         android:text="layout-sw640dp-land"
         android:textSize="26sp" />
+    
     <ImageView
         android:id="@+id/myiv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
         android:src="@drawable/test" />
+    
+    <ImageView
+        android:id="@+id/myiv2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/myiv"
+        android:layout_marginTop="10dp"
+        android:src="@mipmap/test" />
+    
 </RelativeLayout>
