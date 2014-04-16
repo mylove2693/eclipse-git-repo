@@ -22,9 +22,8 @@ public class DBHelper extends SQLiteOpenHelper {
 	@Override
 	public void onCreate(SQLiteDatabase db) {
 		// TODO Auto-generated method stub
-		db.execSQL("CREATE TABLE IF NOT EXITS person" + 
-					"_id INTEGER PRIMARY KEY AUTOINCREMENT, name VARCHAR, " +
-					"age INTEGER, info TEXT");
+		db.execSQL("CREATE TABLE IF NOT EXISTS person" +
+		"(_id INTEGER PRIMARY KEY AUTOINCREMENT, name VARCHAR, age INTEGER, info TEXT)");
 
 	}
 
