@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">SmsIntercept</string>
+    <string name="action_settings">About</string>
+    <string name="hello_world">Hello world!</string>
+	<string name="tab_one">Blocked List</string>
+	<string name="tab_two">SMS Intercept</string>
+	<string name="tab_three">SMS List</string>
+	<string name="mytv_tips">Please Input Phone Number:</string>
+	<string name="myet_hits">phone number</string>
+	<string name="mycb_tips">Save Intercept Messages</string>
+	<string name="btn_text">Add this Number to Blocked List</string>
+	<string name="btn_delnum">Delete Number</string>
+	<string name="btn_clrmsg">Clear Message</string>
+</resources>
