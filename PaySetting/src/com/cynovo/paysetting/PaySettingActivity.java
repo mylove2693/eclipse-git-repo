@@ -1,12 +1,19 @@
 package com.cynovo.paysetting;
 
 import android.app.Activity;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
 public class PaySettingActivity extends Activity {
 
+	private SharedPreferences PaySettingPreference;
+	private Editor editor;
+	
+	private PaySettingLogin LoginFragment;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
