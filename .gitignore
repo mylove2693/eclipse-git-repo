@@ -24,3 +24,4 @@ proguard/
 
 # Add By punan
 .metadata
+.settings
