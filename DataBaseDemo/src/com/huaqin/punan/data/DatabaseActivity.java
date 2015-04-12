@@ -30,7 +30,7 @@ public class DatabaseActivity extends Activity {
 		setContentView(R.layout.activity_database);
 	
 		listView = (ListView)findViewById(R.id.listView);
-		//初始化DBManager
+		//init DBManager
 		mgr = new DBManager(this);
 		
 		btn_test = (Button) findViewById(R.id.btn_test);
