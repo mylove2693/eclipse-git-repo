@@ -1,6 +1,8 @@
 package com.cynovo.paysetting;
 
 import android.app.Activity;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -94,6 +96,7 @@ public class PaySettingActivity extends Activity implements
 			}});
 		
 		LoginFragment = new PaySettingLogin();
+		
 		getFragmentManager().beginTransaction().add(R.id.Frame_container, LoginFragment).commit();
 		
 	}
@@ -102,7 +105,7 @@ public class PaySettingActivity extends Activity implements
 	protected void onStart() {
 		// TODO Auto-generated method stub
 		super.onStart();
-		//getFragmentManager().beginTransaction().show(LoginFragment).commit();
+		getFragmentManager().beginTransaction().show(LoginFragment).commit();
 	}
 	
 	@Override
@@ -147,7 +150,12 @@ public class PaySettingActivity extends Activity implements
 	@Override
 	public void Login() {
 		// TODO Auto-generated method stub
-		getFragmentManager().beginTransaction().hide(LoginFragment).commit();
+		FragmentManager fragmentManager = getFragmentManager();
+		FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+		fragmentTransaction.setCustomAnimations(R.animator.accordion_right_in, R.animator.accordion_left_out);
+		fragmentTransaction.hide(LoginFragment).commit();
+		
+		//getFragmentManager().beginTransaction().hide(LoginFragment).commit();
 	}
 
 }

@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class PaySettingLogin extends Fragment {
 	
@@ -65,10 +66,16 @@ public class PaySettingLogin extends Fragment {
 		public void onTextChanged(CharSequence s, int start, int before,
 				int count) {
 			// TODO Auto-generated method stub
-			if(PaySettingActivity.PASSWORD.equals(s.toString())){
-				imm.toggleSoftInput(InputMethodManager.RESULT_UNCHANGED_SHOWN, InputMethodManager.HIDE_NOT_ALWAYS); 
-				mLogin.Login();
-				et_passwd.setText("");
+
+			if(s.length() == 6){
+				if(PaySettingActivity.PASSWORD.equals(s.toString())){
+					imm.toggleSoftInput(InputMethodManager.RESULT_UNCHANGED_SHOWN, InputMethodManager.HIDE_NOT_ALWAYS); 
+					mLogin.Login();
+					et_passwd.setText("");
+				}else{
+					Toast.makeText(getActivity(), "Password Incorrect!", Toast.LENGTH_SHORT).show();
+					et_passwd.setText("");
+				}
 			}
 		}
 		
