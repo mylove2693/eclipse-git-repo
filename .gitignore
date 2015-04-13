@@ -24,4 +24,8 @@ proguard/
 
 # Add By punan
 .metadata
+<<<<<<< HEAD
+.svn
+=======
 .settings/
+>>>>>>> 7cce48913d647c3269a4529e87b907f7e84e42b0
