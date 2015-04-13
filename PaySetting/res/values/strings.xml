@@ -4,5 +4,10 @@
     <string name="app_name">PaySetting</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="tv_title">请设置支付方式</string>
+    <string name="yinlian">银联支付</string>
+    <string name="zhifubao">支付宝</string>
+    <string name="weixin">微信支付</string>
+    <string name="yibao">易宝支付</string>
 
 </resources>
