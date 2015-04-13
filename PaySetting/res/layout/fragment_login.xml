@@ -6,22 +6,18 @@
     android:orientation="vertical" >
 
     <TextView
-        android:id="@+id/tv"
+        android:id="@+id/tv_login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="num1" />
+        android:gravity="center"
+        android:text="@string/tv_login"
+        android:textSize="30dp" />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="num2" />
-    
-    <EditText 
-        android:id="@+id/myet"
+    <EditText
+        android:id="@+id/et_password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:hint="in put password"
-        />
+        android:hint="@string/et_pass_hint" />
 
 </LinearLayout>

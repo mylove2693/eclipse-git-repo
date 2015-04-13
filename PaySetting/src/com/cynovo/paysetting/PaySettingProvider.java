@@ -14,6 +14,11 @@ public class PaySettingProvider extends ContentProvider {
 	
 	private SharedPreferences PaySettingPreference;
 	
+	private boolean yinlianEnable;
+	private boolean zhifubaoEnable;
+	private boolean weixinEnable;
+	private boolean yibaoEnable;
+	
 	@Override
 	public int delete(Uri uri, String selection, String[] selectionArgs) {
 		// TODO Auto-generated method stub
@@ -44,14 +49,20 @@ public class PaySettingProvider extends ContentProvider {
 	public Cursor query(Uri uri, String[] projection, String selection,
 			String[] selectionArgs, String sortOrder) {
 		// TODO Auto-generated method stub
+
+		yinlianEnable = PaySettingPreference.getBoolean(PaySettingActivity.KEY_YINLIAN, false);
+		zhifubaoEnable = PaySettingPreference.getBoolean(PaySettingActivity.KEY_ZHIFUBAO, false);
+		weixinEnable = PaySettingPreference.getBoolean(PaySettingActivity.KEY_WEIXIN, false);
+		yibaoEnable = PaySettingPreference.getBoolean(PaySettingActivity.KEY_YIBAO, false);
+
 		String[] table = new String[]{"key","value"};
 		
 		MatrixCursor c = new MatrixCursor(table);
 		
-		c.addRow(new Object[]{"yinlian",PaySettingPreference.getString("yinlian", "false")});
-		c.addRow(new Object[]{"yinlian",PaySettingPreference.getString("yinlian", "false")});
-		c.addRow(new Object[]{"yinlian",PaySettingPreference.getString("yinlian", "false")});
-		c.addRow(new Object[]{"yinlian",PaySettingPreference.getString("yinlian", "false")});
+		c.addRow(new Object[]{PaySettingActivity.KEY_YINLIAN,String.valueOf(yinlianEnable)});
+		c.addRow(new Object[]{PaySettingActivity.KEY_ZHIFUBAO,String.valueOf(zhifubaoEnable)});
+		c.addRow(new Object[]{PaySettingActivity.KEY_WEIXIN,String.valueOf(weixinEnable)});
+		c.addRow(new Object[]{PaySettingActivity.KEY_YIBAO,String.valueOf(yibaoEnable)});
 		
 		return c;
 		

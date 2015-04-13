@@ -9,10 +9,11 @@ import android.support.v7.widget.CardView;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.CheckBox;
-import android.widget.Toast;
+
+import com.cynovo.paysetting.PaySettingLogin.onLogin;
 
 public class PaySettingActivity extends Activity implements
-		OnClickListener{
+		OnClickListener, onLogin{
 	
 	public static final String TAG = "PaySetting";
 	public static final String PREFERENCENAME = "payconfig";
@@ -37,6 +38,11 @@ public class PaySettingActivity extends Activity implements
 	private Editor editor;
 
 	private PaySettingLogin LoginFragment;
+	
+	private boolean yinlianEnable;
+	private boolean zhifubaoEnable;
+	private boolean weixinEnable;
+	private boolean yibaoEnable;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -47,12 +53,10 @@ public class PaySettingActivity extends Activity implements
 				PREFERENCENAME, Context.MODE_PRIVATE);
 		editor = PaySettingPreference.edit();
 		
-		editor.putString(KEY_YINLIAN, "closed");
-		editor.putString(KEY_ZHIFUBAO, "closed");
-		editor.putString(KEY_WEIXIN, "closed");
-		editor.putString(KEY_YIBAO, "closed");
-
-		editor.commit();
+		yinlianEnable = PaySettingPreference.getBoolean(KEY_YINLIAN, false);
+		zhifubaoEnable = PaySettingPreference.getBoolean(KEY_ZHIFUBAO, false);
+		weixinEnable = PaySettingPreference.getBoolean(KEY_WEIXIN, false);
+		yibaoEnable = PaySettingPreference.getBoolean(KEY_YIBAO, false);
 
 		card_yinlian = (CardView)findViewById(R.id.card_yinlian);
 		card_zhifubao = (CardView)findViewById(R.id.card_zhifubao);
@@ -68,13 +72,30 @@ public class PaySettingActivity extends Activity implements
 		cb_zhifubao = (CheckBox) findViewById(R.id.cb_zhifubao);
 		cb_weixin = (CheckBox) findViewById(R.id.cb_weixin);
 		cb_yibao = (CheckBox) findViewById(R.id.cb_yibao);
-
-		//cb_yinlian.setOnCheckedChangeListener(this);
-		//cb_zhifubao.setOnCheckedChangeListener(this);
-		//cb_weixin.setOnCheckedChangeListener(this);
-		//cb_yibao.setOnCheckedChangeListener(this);
+		
+		cb_yinlian.setChecked(yinlianEnable);
+		cb_zhifubao.setChecked(zhifubaoEnable);
+		cb_weixin.setChecked(weixinEnable);
+		cb_yibao.setChecked(yibaoEnable);
+		
+		LoginFragment = new PaySettingLogin();
+		getFragmentManager().beginTransaction().add(R.id.Frame_container, LoginFragment).commit();
 		
 	}
+	
+	@Override
+	protected void onStart() {
+		// TODO Auto-generated method stub
+		super.onStart();
+		getFragmentManager().beginTransaction().show(LoginFragment).commit();
+	}
+	
+//	@Override
+//	protected void onRestart() {
+//		// TODO Auto-generated method stub
+//		super.onRestart();
+//		getFragmentManager().beginTransaction().show(LoginFragment).commit();
+//	}
 	
 	@Override
 	public void onClick(View v) {
@@ -82,79 +103,43 @@ public class PaySettingActivity extends Activity implements
 		int id = v.getId();
 		switch(id){
 		case R.id.card_yinlian :
-			if(cb_yinlian.isChecked()){
-				cb_yinlian.setChecked(false);
-			}else{
-				cb_yinlian.setChecked(true);
-			}
-			
-			try {
-				Toast.makeText(PaySettingActivity.this, "银联：" + cb_yinlian.isChecked(),
-					Toast.LENGTH_SHORT).show();
-				String str = AESCrypto.encrypt(PASSWORD, String.valueOf(cb_yinlian.isChecked()));
-				editor.putString(KEY_YINLIAN, str);
-				editor.commit();
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+			yinlianEnable = !yinlianEnable;
+			cb_yinlian.setChecked(yinlianEnable);
+			editor.putBoolean(KEY_YINLIAN, yinlianEnable);
+			editor.commit();
+
 			break;
 			
 		case R.id.card_zhifubao:
-			if(cb_zhifubao.isChecked()){
-				cb_zhifubao.setChecked(false);
-			}else{
-				cb_zhifubao.setChecked(true);
-			}
-			
-			try {
-				Toast.makeText(PaySettingActivity.this, "支付宝：" + cb_zhifubao.isChecked(),
-					Toast.LENGTH_SHORT).show();
-				String str = AESCrypto.encrypt(PASSWORD, String.valueOf(cb_zhifubao.isChecked()));
-				editor.putString(KEY_ZHIFUBAO, str);
-				editor.commit();
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+			zhifubaoEnable = !zhifubaoEnable;
+			cb_zhifubao.setChecked(zhifubaoEnable);
+			editor.putBoolean(KEY_ZHIFUBAO, zhifubaoEnable);
+			editor.commit();
+
 			break;
 			
 		case R.id.card_weixin:
-			if(cb_weixin.isChecked()){
-				cb_weixin.setChecked(false);
-			}else{
-				cb_weixin.setChecked(true);
-			}
-			try {
-				Toast.makeText(PaySettingActivity.this, "微信：" + cb_weixin.isChecked(),
-					Toast.LENGTH_SHORT).show();
-				String str = AESCrypto.encrypt(PASSWORD, String.valueOf(cb_weixin.isChecked()));
-				editor.putString(KEY_WEIXIN, str);
-				editor.commit();
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+			weixinEnable = !weixinEnable;
+			cb_weixin.setChecked(weixinEnable);
+			editor.putBoolean(KEY_WEIXIN, weixinEnable);
+			editor.commit();
+			
 			break;
 			
 		case R.id.card_yibao:
-			if(cb_yibao.isChecked()){
-				cb_yibao.setChecked(false);
-			}else{
-				cb_yibao.setChecked(true);
-			}
-			try {
-				Toast.makeText(PaySettingActivity.this, "易宝：" + cb_yibao.isChecked(),
-					Toast.LENGTH_SHORT).show();
-				String str = AESCrypto.encrypt(PASSWORD, String.valueOf(cb_yibao.isChecked()));
-				editor.putString(KEY_YIBAO, str);
-				editor.commit();
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+			yibaoEnable = !yibaoEnable;
+			cb_yibao.setChecked(yibaoEnable);
+			editor.putBoolean(KEY_YIBAO, yibaoEnable);
+			editor.commit();
+			
 			break;
 		}
+	}
+
+	@Override
+	public void Login() {
+		// TODO Auto-generated method stub
+		getFragmentManager().beginTransaction().hide(LoginFragment).commit();
 	}
 
 }

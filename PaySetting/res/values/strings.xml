@@ -9,5 +9,6 @@
     <string name="zhifubao">支付宝</string>
     <string name="weixin">微信支付</string>
     <string name="yibao">易宝支付</string>
-
+	<string name="tv_login">请输入登录密码</string>
+	<string name="et_pass_hint">Please Input Password</string>
 </resources>

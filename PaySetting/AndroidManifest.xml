@@ -22,6 +22,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <provider android:name=".PaySettingProvider" 
+            android:exported="true"
+            android:authorities="com.cynovo.paysetting.PaySettingProvider"
+            />
     </application>
 
 </manifest>
