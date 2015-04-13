@@ -2,12 +2,14 @@ package com.cynovo.paysetting;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.Button;
 import android.widget.CheckBox;
 
 import com.cynovo.paysetting.PaySettingLogin.onLogin;
@@ -43,6 +45,8 @@ public class PaySettingActivity extends Activity implements
 	private boolean zhifubaoEnable;
 	private boolean weixinEnable;
 	private boolean yibaoEnable;
+	
+	private Button btn_test_data;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -78,6 +82,17 @@ public class PaySettingActivity extends Activity implements
 		cb_weixin.setChecked(weixinEnable);
 		cb_yibao.setChecked(yibaoEnable);
 		
+		btn_test_data = (Button)findViewById(R.id.btn_test_data);
+		btn_test_data.setOnClickListener(new OnClickListener(){
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				Intent intent = new Intent();
+				intent.setClass(PaySettingActivity.this, GetDataTest.class);
+				intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+				PaySettingActivity.this.startActivity(intent);
+			}});
+		
 		LoginFragment = new PaySettingLogin();
 		getFragmentManager().beginTransaction().add(R.id.Frame_container, LoginFragment).commit();
 		
@@ -87,15 +102,8 @@ public class PaySettingActivity extends Activity implements
 	protected void onStart() {
 		// TODO Auto-generated method stub
 		super.onStart();
-		getFragmentManager().beginTransaction().show(LoginFragment).commit();
+		//getFragmentManager().beginTransaction().show(LoginFragment).commit();
 	}
-	
-//	@Override
-//	protected void onRestart() {
-//		// TODO Auto-generated method stub
-//		super.onRestart();
-//		getFragmentManager().beginTransaction().show(LoginFragment).commit();
-//	}
 	
 	@Override
 	public void onClick(View v) {

@@ -2,12 +2,14 @@ package com.cynovo.paysetting;
 
 import android.app.Activity;
 import android.app.Fragment;
+import android.content.Context;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -17,7 +19,7 @@ public class PaySettingLogin extends Fragment {
 	private EditText et_passwd;
 	
 	private onLogin mLogin;
-	
+	private InputMethodManager imm;
 	public interface onLogin{
 		void Login();
 	}
@@ -40,6 +42,8 @@ public class PaySettingLogin extends Fragment {
 		
 		et_passwd.addTextChangedListener(mTextWatcher);
 		
+		imm = (InputMethodManager)getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
+		imm.showSoftInput(et_passwd, InputMethodManager.RESULT_UNCHANGED_SHOWN);
 		return rootView;
 	}
 
@@ -62,6 +66,7 @@ public class PaySettingLogin extends Fragment {
 				int count) {
 			// TODO Auto-generated method stub
 			if(PaySettingActivity.PASSWORD.equals(s.toString())){
+				imm.toggleSoftInput(InputMethodManager.RESULT_UNCHANGED_SHOWN, InputMethodManager.HIDE_NOT_ALWAYS); 
 				mLogin.Login();
 				et_passwd.setText("");
 			}

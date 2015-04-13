@@ -11,4 +11,6 @@
     <string name="yibao">易宝支付</string>
 	<string name="tv_login">请输入登录密码</string>
 	<string name="et_pass_hint">Please Input Password</string>
+	<string name="btn_test">测试读取数据</string>
+	<string name="btn_getdata">读取数据</string>
 </resources>
