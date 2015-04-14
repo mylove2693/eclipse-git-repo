@@ -12,7 +12,7 @@ public class PaySettingProvider extends ContentProvider {
 	
 	public static final String TAG = "PaySettingProvider";
 	
-	private SharedPreferences PaySettingPreference;
+	private DataUtil data;
 	
 	private boolean yinlianEnable;
 	private boolean zhifubaoEnable;
@@ -40,7 +40,7 @@ public class PaySettingProvider extends ContentProvider {
 	@Override
 	public boolean onCreate() {
 		// TODO Auto-generated method stub
-		PaySettingPreference = this.getContext().getSharedPreferences(PaySettingActivity.PREFERENCENAME, Context.MODE_PRIVATE);
+		data = new DataUtil(this.getContext());
 		
 		return true;
 	}
@@ -50,19 +50,19 @@ public class PaySettingProvider extends ContentProvider {
 			String[] selectionArgs, String sortOrder) {
 		// TODO Auto-generated method stub
 
-		yinlianEnable = PaySettingPreference.getBoolean(PaySettingActivity.KEY_YINLIAN, false);
-		zhifubaoEnable = PaySettingPreference.getBoolean(PaySettingActivity.KEY_ZHIFUBAO, false);
-		weixinEnable = PaySettingPreference.getBoolean(PaySettingActivity.KEY_WEIXIN, false);
-		yibaoEnable = PaySettingPreference.getBoolean(PaySettingActivity.KEY_YIBAO, false);
+		yinlianEnable = data.getBoolean(DataUtil.KEY_YINLIAN, false);
+		zhifubaoEnable = data.getBoolean(DataUtil.KEY_ZHIFUBAO, false);
+		weixinEnable = data.getBoolean(DataUtil.KEY_WEIXIN, false);
+		yibaoEnable = data.getBoolean(DataUtil.KEY_YIBAO, false);
 
 		String[] table = new String[]{"key","value"};
 		
 		MatrixCursor c = new MatrixCursor(table);
 		
-		c.addRow(new Object[]{PaySettingActivity.KEY_YINLIAN,String.valueOf(yinlianEnable)});
-		c.addRow(new Object[]{PaySettingActivity.KEY_ZHIFUBAO,String.valueOf(zhifubaoEnable)});
-		c.addRow(new Object[]{PaySettingActivity.KEY_WEIXIN,String.valueOf(weixinEnable)});
-		c.addRow(new Object[]{PaySettingActivity.KEY_YIBAO,String.valueOf(yibaoEnable)});
+		c.addRow(new Object[]{DataUtil.KEY_YINLIAN,String.valueOf(yinlianEnable)});
+		c.addRow(new Object[]{DataUtil.KEY_ZHIFUBAO,String.valueOf(zhifubaoEnable)});
+		c.addRow(new Object[]{DataUtil.KEY_WEIXIN,String.valueOf(weixinEnable)});
+		c.addRow(new Object[]{DataUtil.KEY_YIBAO,String.valueOf(yibaoEnable)});
 		
 		return c;
 		

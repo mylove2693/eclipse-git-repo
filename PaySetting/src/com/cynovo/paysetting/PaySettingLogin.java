@@ -67,8 +67,8 @@ public class PaySettingLogin extends Fragment {
 				int count) {
 			// TODO Auto-generated method stub
 
-			if(s.length() == 6){
-				if(PaySettingActivity.PASSWORD.equals(s.toString())){
+			if(s.length() == 8){
+				if(DataUtil.PASSWORD.equals(s.toString())){
 					imm.toggleSoftInput(InputMethodManager.RESULT_UNCHANGED_SHOWN, InputMethodManager.HIDE_NOT_ALWAYS); 
 					mLogin.Login();
 					et_passwd.setText("");
