@@ -43,7 +43,7 @@ public class DataUtil {
 	protected void putBoolean(String key, boolean value){
 		
 		if(!VerifyPreference()){
-			Toast.makeText(context, "err£ºdata has benn changed..", Toast.LENGTH_SHORT).show();
+			Toast.makeText(context, "err£ºdata has benn changed. refused", Toast.LENGTH_SHORT).show();
 		}
 		
 		try{
