@@ -41,6 +41,11 @@ public class DataUtil {
 	}
 	
 	protected void putBoolean(String key, boolean value){
+		
+		if(!VerifyPreference()){
+			Toast.makeText(context, "err：data has benn changed..", Toast.LENGTH_SHORT).show();
+		}
+		
 		try{
 				
 			byte[] encrypt = DESCrypt.encryptDES(PASSWORD,String.valueOf(value));
@@ -63,7 +68,7 @@ public class DataUtil {
 	protected boolean getBoolean(String key, boolean value){
 		
 		if(!VerifyPreference()){
-			Toast.makeText(context, "错误：数据被修改", Toast.LENGTH_SHORT).show();
+			Toast.makeText(context, "err：data has benn changed", Toast.LENGTH_SHORT).show();
 			return false;
 		}
 		
@@ -97,7 +102,7 @@ public class DataUtil {
 			byte[] deverify = DESCrypt.decryptDES(PASSWORD,new String(enverify));
 		
 			int hashcode = Integer.valueOf(new String(deverify));
-		
+			
 			return PaySettingPreference.hashCode() == hashcode;
 			
 		} catch (Exception e){
