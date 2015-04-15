@@ -92,8 +92,8 @@ public class DataUtil {
 	
 	protected boolean VerifyPreference(){
 		try{
-			String enHashCode = PayVerifyPreference.getString(KEY_VERIFY, "false");
-			if("false".equals(enHashCode)){
+			String enHashCode = PayVerifyPreference.getString(KEY_VERIFY, "nofile");
+			if("nofile".equals(enHashCode)){
 				Toast.makeText(context, "First time run", Toast.LENGTH_SHORT).show();
 				return true;
 			}
