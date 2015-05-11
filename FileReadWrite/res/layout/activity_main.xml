@@ -13,4 +13,18 @@
         android:layout_height="wrap_content"
         android:text="@string/hello_world" />
 
+    <Button
+        android:id="@+id/btn_write"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:text="Write" />
+
+    <Button
+        android:id="@+id/btn_read"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/btn_write"
+        android:text="Read" />
+
 </RelativeLayout>
