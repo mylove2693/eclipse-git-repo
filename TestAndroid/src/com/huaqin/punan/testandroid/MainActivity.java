@@ -1,16 +1,17 @@
 package com.huaqin.punan.testandroid;
 
-import java.text.SimpleDateFormat;
-import java.util.zip.ZipEntry;
-import java.util.zip.ZipFile;
-
+import it.gmariotti.cardslib.library.internal.Card;
+import it.gmariotti.cardslib.library.internal.Card.OnCardClickListener;
+import it.gmariotti.cardslib.library.internal.CardHeader;
+import it.gmariotti.cardslib.library.internal.CardThumbnail;
+import it.gmariotti.cardslib.library.view.CardView;
 import android.app.Activity;
-import android.content.pm.ApplicationInfo;
 import android.os.Bundle;
 import android.os.Handler;
 import android.telephony.TelephonyManager;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,30 +24,69 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		mytv = (TextView)findViewById(R.id.mytv);
-		  try{
-			     ApplicationInfo ai = getPackageManager().getApplicationInfo("com.sifong.Anyhealth", 0);
-			     ZipFile zf = new ZipFile(ai.sourceDir);
-			     ZipEntry ze = zf.getEntry("classes.dex");
-			     long time = ze.getTime();
-			     String s = SimpleDateFormat.getInstance().format(new java.util.Date(time));
-			     zf.close();
-			     Toast.makeText(this, s, Toast.LENGTH_SHORT).show();
-					mytv.setText(s);
-			  }catch(Exception e){
-				  Toast.makeText(this, "Exception:"+e, Toast.LENGTH_SHORT).show();
-			  }
+		mytv = (TextView) findViewById(R.id.mytv);
 
-		NoLooperThread mT = new NoLooperThread();
-		//mT.start();
+		// Create a Card
+		Card card = new Card(MainActivity.this);
 		
-		mTelephonyManager = (TelephonyManager) this
-				.getSystemService(TELEPHONY_SERVICE);
+//		card.setOnClickListener(new OnCardClickListener(){
+//
+//			@Override
+//			public void onClick(Card card, View view) {
+//				// TODO Auto-generated method stub
+//				Toast.makeText(MainActivity.this, "Card Clicked!", Toast.LENGTH_SHORT).show();
+//			}});
+		
+		// Create a CardHeader
+		CardHeader header = new CardHeader(MainActivity.this);
+		header.setTitle("Head Title");
+		
+		
+		card.addPartialOnClickListener(Card.CLICK_LISTENER_THUMBNAIL_VIEW, new OnCardClickListener(){
 
-		if (mTelephonyManager.getCallState() == TelephonyManager.CALL_STATE_RINGING
-				|| mTelephonyManager.getCallState() == TelephonyManager.CALL_STATE_OFFHOOK) {
+			@Override
+			public void onClick(Card card, View view) {
+				// TODO Auto-generated method stub
+				Toast.makeText(MainActivity.this, "Card Clicked!", Toast.LENGTH_SHORT).show();
+			}});
+		// Add Header to card
+		card.addCardHeader(header);
+		
+		CardThumbnail thumb = new CardThumbnail(MainActivity.this);
+		thumb.setDrawableResource(R.drawable.weixin);
+		thumb.setTitle("sss");
+		thumb.setId("thumb");
+		card.addCardThumbnail(thumb);
+		
+		// Set card in the cardView
+		CardView cardView = (CardView) findViewById(R.id.carddemo);
+		cardView.setCard(card);
 
-		}
+		/**
+		 * unzip program for test
+		 * 
+		 * @author punan
+		 */
+		/*
+		 * try{ ApplicationInfo ai =
+		 * getPackageManager().getApplicationInfo("com.sifong.Anyhealth", 0);
+		 * ZipFile zf = new ZipFile(ai.sourceDir); ZipEntry ze =
+		 * zf.getEntry("classes.dex"); long time = ze.getTime(); String s =
+		 * SimpleDateFormat.getInstance().format(new java.util.Date(time));
+		 * zf.close(); Toast.makeText(this, s, Toast.LENGTH_SHORT).show();
+		 * mytv.setText(s); }catch(Exception e){ Toast.makeText(this,
+		 * "Exception:"+e, Toast.LENGTH_SHORT).show(); }
+		 */
+//		NoLooperThread mT = new NoLooperThread();
+//		// mT.start();
+//
+//		mTelephonyManager = (TelephonyManager) this
+//				.getSystemService(TELEPHONY_SERVICE);
+//
+//		if (mTelephonyManager.getCallState() == TelephonyManager.CALL_STATE_RINGING
+//				|| mTelephonyManager.getCallState() == TelephonyManager.CALL_STATE_OFFHOOK) {
+//
+//		}
 
 	}
 

@@ -15,4 +15,29 @@
         android:layout_marginBottom="8dp"
         android:text="@string/hello_world" />
 
+    <it.gmariotti.cardslib.library.view.CardView
+        android:id="@+id/carddemo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/mytv"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginTop="12dp" >
+        
+        <ImageView 
+            android:id="@+id/ig"
+            android:layout_height="20dp"
+            android:layout_width="20dp"
+            android:src="@drawable/weixin"
+            />
+        
+    </it.gmariotti.cardslib.library.view.CardView>
+
+    <Button
+        android:id="@+id/mybtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:text="Button" />
+
 </RelativeLayout>
