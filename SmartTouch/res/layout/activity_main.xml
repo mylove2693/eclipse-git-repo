@@ -13,4 +13,15 @@
         android:layout_height="wrap_content"
         android:text="@string/hello_world" />
 
+    
+    <Button 
+        android:id="@+id/btn_expandsb"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_alignParentBottom="true"
+        android:text="Expand Status Bar"
+        android:layout_margin="5dp"
+        />
+    
+    
 </RelativeLayout>

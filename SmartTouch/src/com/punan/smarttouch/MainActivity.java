@@ -1,16 +1,35 @@
 package com.punan.smarttouch;
 
+import java.lang.reflect.Method;
+
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
 
 public class MainActivity extends Activity {
+	public static final String TAG = "SmartTouch MainActivity";
+	private Button btn_expandsb;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+
+		btn_expandsb = (Button) findViewById(R.id.btn_expandsb);
+		btn_expandsb.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				ExpandStatusBar();
+			}
+		});
+
 	}
 
 	@Override
@@ -31,4 +50,18 @@ public class MainActivity extends Activity {
 		}
 		return super.onOptionsItemSelected(item);
 	}
+
+	public void ExpandStatusBar() {
+		try {
+
+			Object service = getSystemService("statusbar");
+			Class<?> statusbarManager = Class.forName("android.app.StatusBarManager");
+			Method expand = statusbarManager.getMethod("expandNotificationsPanel");
+			expand.invoke(service);
+
+		} catch (Exception ex) {
+			Log.e(TAG, "Exception on Expand Status Bar "+ex.getMessage());
+		}
+	}
+
 }

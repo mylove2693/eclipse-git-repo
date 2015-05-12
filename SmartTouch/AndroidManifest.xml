@@ -4,6 +4,8 @@
     android:versionCode="1"
     android:versionName="1.0" >
 
+    <uses-permission android:name="android.permission.EXPAND_STATUS_BAR" />
+
     <uses-sdk
         android:minSdkVersion="16"
         android:targetSdkVersion="22" />
@@ -22,6 +24,26 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <service android:name=".ExpandSBService" >
+        </service>
+
+        <receiver android:name=".ExpandSBReceiver" >
+            <intent-filter>
+                <action android:name="com.cynovo.punan.expandstatusbar" />
+            </intent-filter>
+        </receiver>
+        
+        <receiver android:name=".SmartTouchAppWidget" >
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/appwidget_info" >
+            </meta-data>
+        </receiver>
     </application>
 
 </manifest>
