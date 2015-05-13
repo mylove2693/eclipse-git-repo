@@ -1,0 +1,83 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#77777777"
+    >
+	<RelativeLayout
+	    android:layout_width="match_parent"
+	    android:layout_height="match_parent"
+	    android:layout_margin="50dp"
+	    android:background="@drawable/repeat_bg"
+	    >
+	    <include
+	        android:id="@+id/payTopLayout"
+	        android:layout_width="match_parent"
+	        android:layout_height="113dp"
+	        android:layout_alignParentTop="true"
+	        layout="@layout/pay_top"
+	        />
+	    
+	    <RelativeLayout
+		    android:id="@+id/login_bar1"
+	        android:layout_marginTop="188dp"
+		    android:layout_width="@dimen/login_help_bar_width"
+		   	android:layout_height="@dimen/login_help_bar_height"
+		   	android:layout_centerHorizontal="true"
+		   	>
+		   	 <!-- 左边小圆圈按钮,平时隐藏 -->
+	   		<Button 
+	   		    
+	   		    android:id="@+id/login_bak1"
+	   		    android:layout_width="wrap_content"
+	    		android:layout_height="wrap_content"
+	    		android:visibility="invisible"
+	    		android:layout_alignParentLeft="true"
+	    		android:background="@drawable/login_back"/>
+	   		
+	   		 <!-- 显示PaySDK-->	
+	    	<TextView 
+	    	    android:id="@+id/left_text"
+		        android:text="@string/app_name"
+		        android:layout_width="wrap_content"
+	    		android:layout_height="wrap_content"
+		        android:textColor="@color/text_normal_color"
+		        android:textSize="30sp"
+		        android:layout_toRightOf="@id/login_bak1"
+		        android:layout_marginLeft="21dp"
+		        android:layout_alignParentBottom="true"
+		        android:layout_marginBottom="10dp"/>
+		    
+	    	 <!-- 右边的显示(签到) -->
+		    <TextView 
+		        android:id="@+id/titleText"
+		        android:text="@string/active_device"
+	    	    android:layout_width="wrap_content"
+	    		android:layout_height="wrap_content"
+		        android:textColor="@color/text_normal_color"
+		        android:textSize="18sp"
+		        android:layout_alignParentRight="true" 
+		        android:layout_alignParentBottom="true"
+		        android:layout_alignBaseline="@id/left_text"/>
+		    
+	
+		   <!-- 下面的横线-->
+		    <ImageView 
+		        android:layout_width="@dimen/log_srcoll_width"
+	    		android:layout_height="1dp"
+	    		android:layout_alignParentBottom="true"
+	    		android:layout_alignParentRight="true"
+	    		android:layout_marginBottom="10dp"
+		        android:background="@color/bar_normal_color"/>
+			
+		</RelativeLayout>
+	
+	    <RelativeLayout
+	        android:id="@+id/fragmentLayout2"
+	        android:layout_width="match_parent"
+	        android:layout_height="match_parent"
+	        android:layout_marginLeft="56dp"
+	        android:layout_below="@id/login_bar1" >
+	    </RelativeLayout>
+	</RelativeLayout>
+
+</RelativeLayout>
