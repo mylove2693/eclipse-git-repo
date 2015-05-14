@@ -81,8 +81,8 @@ public class FxService extends Service {
 				// TODO Auto-generated method stub
 				Log.v(TAG, "onTouch");
 				
-				wmParams.x = (int) event.getRawX() - mFloatView.getMeasuredWidth()/2;
-				wmParams.y = (int) event.getRawY() - mFloatView.getMeasuredHeight()/2;
+				wmParams.x = (int) event.getRawX() - mFloatView.getMeasuredWidth()/2 -20;
+				wmParams.y = (int) event.getRawY() - mFloatView.getMeasuredHeight()/2 -80;
 				
 				mWindowManager.updateViewLayout(mFloatLayout, wmParams);
 				
