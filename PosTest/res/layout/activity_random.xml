@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+	<TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="50sp"
+        android:layout_gravity="center"
+        android:text="@string/random_title" />
+        
+    <TextView
+        android:id="@+id/tvRandom"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/random"
+        android:textSize="25sp" />
+
+    <ImageView
+        android:id="@+id/QRCodeRandom"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:contentDescription="@+string/image_content_description" />
+
+    <Button
+        android:id="@+id/btnGenRandom"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/gen_random" />
+
+</LinearLayout>

@@ -1,0 +1,107 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="${relativePackage}.${activityClass}" >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textSize="50sp"
+        android:text="@string/app_title" />
+    
+    <TextView
+        android:id="@+id/sn"       
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+ />    
+    
+    <LinearLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <Button 
+            android:id="@+id/btnMSR"
+			android:layout_marginTop="20dp"            
+            android:layout_width="500dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:textSize="30sp"
+			android:layout_gravity="center"                        
+            android:text="@string/msr_title"/>
+        
+        <Button 
+            android:id="@+id/btnEMV"
+			android:layout_marginTop="10dp"                        
+            android:layout_width="500dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:textSize="30sp"
+			android:layout_gravity="center"                        
+            android:text="@string/emv_title"/>
+        
+        <Button 
+            android:id="@+id/btnNFC"
+			android:layout_marginTop="10dp"                                    
+            android:layout_width="500dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:textSize="30sp"
+			android:layout_gravity="center"                        
+            android:text="@string/nfc_title"/>
+        
+        <Button 
+            android:id="@+id/btnNFCmifare"
+			android:layout_marginTop="10dp"                                    
+            android:layout_width="500dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:textSize="30sp"
+			android:layout_gravity="center"                        
+            android:text="@string/nfc_mifare_title"/>        
+
+		<Button 
+            android:id="@+id/btnprinter"
+			android:layout_marginTop="10dp"                                    
+            android:layout_width="500dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:textSize="30sp"
+			android:layout_gravity="center"                        
+            android:text="@string/printer_title"/>
+		
+		<Button 
+            android:id="@+id/btnpinpad"
+			android:layout_marginTop="10dp"                                    
+            android:layout_width="500dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:textSize="30sp"
+			android:layout_gravity="center"                        
+            android:text="@string/pinpad_title"/>
+            
+		<Button 
+            android:id="@+id/btnled"
+			android:layout_marginTop="10dp"                                    
+            android:layout_width="500dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:textSize="30sp"
+			android:layout_gravity="center"                        
+            android:text="@string/led_title"/>
+    
+		<Button 
+            android:id="@+id/btnrandom"
+			android:layout_marginTop="10dp"                                    
+            android:layout_width="500dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:textSize="30sp"
+			android:layout_gravity="center"                        
+            android:text="@string/random_title"/>
+    </LinearLayout>    
+
+</LinearLayout>
