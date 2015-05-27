@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+	<TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="50sp"
+        android:layout_gravity="center"
+        android:text="@string/msr_title" />
+	
+    <TextView
+        android:id="@+id/show_card_information"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="@+string/notice"
+        android:textColor="#00FF00"
+        android:textSize="30sp" />
+     
+     <TextView
+         android:id="@+id/msr_show_textview"
+         android:layout_height="wrap_content"
+         android:layout_width="wrap_content"
+         android:layout_marginTop="150dp"
+         android:textSize="25sp" />
+     
+     <TextView
+         android:id="@+id/msr_show_1_trcak"
+         android:layout_height="wrap_content"
+         android:layout_width="wrap_content"
+         android:textSize="25sp" />
+  
+   
+     <Button
+         android:id="@+id/msr_back"
+         android:layout_height="wrap_content"
+         android:layout_width="fill_parent"
+         android:text="@+string/swipcard"
+         android:textSize="25sp" />
+</LinearLayout>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- title -->
+    <string name="app_title">PAR10-H6 Demo V1.0.4</string>
+    <string name="msr_title">MSR</string>
+    <string name="emv_title">EMV</string>
+    <string name="nfc_title">NFC</string>
+    <string name="nfc_mifare_title">NFC mifare</string>
+    <string name="printer_title">PRINTER</string>
+	<string name="pinpad_title">PINPAD</string>
+	<string name="led_title">LED</string>
+    <string name="random_title">4300 random test</string>
+		
+    
+    <string name="notice">swipe card test tool</string>
+    <string name="swipcard">swipe card</string>
+    <string name="open_msr_fail">open msr fail</string>
+    <string name="app_name">PAR10H6</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_msr">MsrActivity</string>
+    <string name="title_activity_emv">EmvActivity</string>
+    <string name="title_activity_nfc">NfcActivity</string>
+    <string name="title_activity_nfc_mifare">NfcmifareActivity</string>
+    <string name="title_activity_twobarcode">TwobarcodeActivity</string>
+	<string name="title_activity_printer">PrinterActivity</string>    
+	<string name="title_activity_pinpad">PinpadActivity</string>	
+	<string name="title_activity_led">PinpadActivity</string>	
+	<string name="title_activity_random">RandomActivity</string>	
+		
+	
+		
+   	<string name="action_settings">action_settings</string>    
+
+   	<!-- EMV -->
+	<string name="emv_no">No: </string>  
+   		
+	<!-- led -->
+	<string name="nfc_blue_led_on">nfc blue on</string>  
+	<string name="nfc_blue_led_off">nfc blue off</string>    
+	<string name="nfc_green_led_on">nfc green on</string>  
+	<string name="nfc_green_led_off">nfc green off</string>   
+	<string name="nfc_red_led_on">nfc red on</string>  
+	<string name="nfc_red_led_off">nfc red off</string>   
+	<string name="nfc_yellow_led_on">nfc yellow on</string>  
+	<string name="nfc_yellow_led_off">nfc yellow off</string>   
+	<string name="camera_led_on">camera led on</string>  
+	<string name="camera_led_off">camera led off</string>   
+	<string name="green_led_on">green led on</string>  
+	<string name="green_led_off">green led off</string>   	
+	<string name="red_led_on">red led on</string>  
+	<string name="red_led_off">red led off</string>   
+	<string name="turn_on_all">turn on all</string>  
+	<string name="turn_off_all">turn off all</string>  
+
+    <!-- Pinpad Module -->
+    <string name="master_key_id">主密钥ID:</string>
+    <string name="user_key_id">工作密钥ID:</string>
+    <string name="show_text">在密码键盘屏幕上显示数据</string>
+    <string name="encrypt_text">加密数据</string>
+    <string name="pinblock">计算pinblock</string>
+    <string name="mac">计算MAC</string>
+    <string name="plain">user pin：</string>
+    <string name="cipher">master pin：</string>
+    <string name="user">update user pin</string>
+    <string name="master">更新主密钥</string>
+    <string name="encrypt">加密数据</string>
+    <string name="master_key">主密钥：</string>
+    <string name="pinblock_key">Pinblock密钥：</string>
+    <string name="mac_key">MAC密钥：</string>
+    <string name="mac_type">MAC类型：</string>
+    <string name="mac_data">MAC数据：</string>
+    <string name="encrypt_data">待加密的数据：</string>
+    <string name="text_data">要显示的数据：</string>
+    <string name="update_pinblock">更新pinblock密钥</string>
+    <string name="update_mac">更新MAC密钥</string>
+    <string name="card_no">卡号：</string>	
+    
+	<!-- printer -->
+	<string name="open_printer">open</string> 
+	<string name="close_printer">close</string> 
+	<string name="usb_printer_1">"usb printer 1"</string>    
+	<string name="usb_printer_2">"usb printer 2"</string>    
+	<string name="serial_printer">"serial printer"</string>    
+
+	    <!-- Random Test -->
+    <string name="random">随机数：</string>
+    <string name="gen_random">生成随机数</string>
+    <string name="gen_random_fail">生成随机数失败！</string>
+    
+        <!-- NFC Mifare Module -->
+    <string name="card_event">卡片事件：</string>
+    <string name="I_value_min">I Value(min)：</string>
+    <string name="I_value_max">I Value(max)：</string>
+    <string name="Q_value_min">Q Value(min)：</string>
+    <string name="Q_value_max">Q Value(max)：</string>
+    <string name="input_I_value">Please Input I Value</string>
+    <string name="input_Q_value">Please Input Q Value</string>
+    <string name="set_IQ_value">Set I Value, Q Value</string>
+    <string name="open_reader">Open Reader</string>
+    <string name="close_reader">Close Reader</string>
+    <string name="search_target_begin">SearchBegin</string>
+    <string name="search_target_stop">SearchEnd</string>
+    <string name="sector_id">SectorId:</string>
+    <string name="block_id">BlockId:</string>
+    <string name="key_A">KeyA:</string>
+    <string name="key_B">KeyB:</string>
+    <string name="verify_card">Verify</string>
+    <string name="write_mifare_card">Write</string>
+    <string name="read_mifare_card">Read</string>
+
+    <string name="retest">重新测试</string>
+    	   	
+
+</resources>

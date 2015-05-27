@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TextView
+        android:id="@+id/aaa"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+
+    <TableLayout
+        android:id="@+id/tbPinpad0"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/aaa"
+        android:orientation="horizontal" >
+
+        <TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@+string/master_key_id"
+                android:textSize="20sp" />
+
+            <Spinner
+                android:id="@+id/spMasterKeyID"
+                android:layout_width="100sp"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="150sp"
+                android:text="@+string/user_key_id"
+                android:textSize="20sp" />
+
+            <Spinner
+                android:id="@+id/spUserKeyID"
+                android:layout_width="100sp"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/tvUserKeyID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp" />
+        </TableRow>
+    </TableLayout>
+
+    <TableLayout
+        android:id="@+id/tbPinpad1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tbPinpad0"
+        android:orientation="horizontal" >
+
+        <TableRow>
+
+            <TextView
+                android:id="@+id/textView_master_key"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@+string/master_key"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/editText_master_key"
+                android:layout_width="400sp"
+                android:layout_height="wrap_content"
+                android:digits="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                android:maxLength="32" />
+
+            <Button
+                android:id="@+id/button_master"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@+string/master" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:id="@+id/textView_pinblock_key"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@+string/pinblock_key"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/editText_pinblock"
+                android:layout_width="400sp"
+                android:layout_height="wrap_content"
+                android:digits="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                android:maxLength="32" />
+
+            <Button
+                android:id="@+id/button_update_pinblock"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@+string/update_pinblock" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:id="@+id/textView_mac_key"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@+string/mac_key"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/editText_mac_key"
+                android:layout_width="400sp"
+                android:layout_height="wrap_content"
+                android:digits="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                android:maxLength="32" />
+
+            <Button
+                android:id="@+id/button_update_mac"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@+string/update_mac" />
+        </TableRow>
+    </TableLayout>
+
+    <TableLayout
+        android:id="@+id/tbPinpad2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tbPinpad1"
+        android:layout_marginTop="30sp"
+        android:orientation="horizontal" >
+
+        <TableRow>
+
+            <TextView
+                android:id="@+id/textView_text_data"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@+string/text_data"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/editText_text_data1"
+                android:layout_width="200sp"
+                android:layout_height="wrap_content"
+                android:digits="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                android:hint="请输入密码键盘第一行数据" />
+
+            <EditText
+                android:id="@+id/editText_text_data2"
+                android:layout_width="200sp"
+                android:layout_height="wrap_content"
+                android:digits="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                android:hint="请输入密码键盘第二行数据" />
+
+            <Button
+                android:id="@+id/button_show_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@+string/show_text" />
+        </TableRow>
+    </TableLayout>
+
+    <TableLayout
+        android:id="@+id/tbPinpad3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tbPinpad2"
+        android:layout_marginTop="30sp"
+        android:orientation="horizontal" >
+
+        <TableRow>
+
+            <TextView
+                android:id="@+id/textView_mac_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@+string/mac_type"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/editText_mac_type"
+                android:layout_width="100sp"
+                android:layout_height="wrap_content"
+                android:digits="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:id="@+id/textView_mac_data"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@+string/mac_data"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/editText_mac_data"
+                android:layout_width="400sp"
+                android:layout_height="wrap_content"
+                android:maxLength="32" />
+        </TableRow>
+
+        <TableRow>
+
+            <Button
+                android:id="@+id/button_mac"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@+string/mac" />
+
+            <EditText
+                android:id="@+id/editText_mac_out"
+                android:layout_width="400sp"
+                android:layout_height="wrap_content" />
+        </TableRow>
+    </TableLayout>
+
+    <TableLayout
+        android:id="@+id/tbPinpad4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tbPinpad3"
+        android:layout_marginTop="30sp"
+        android:orientation="horizontal" >
+
+        <TableRow>
+
+            <TextView
+                android:id="@+id/textView_cardNo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@+string/card_no"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/editText_card_no"
+                android:layout_width="400sp"
+                android:layout_height="wrap_content"
+                android:maxLength="19"
+                android:numeric="integer" />
+
+            <Button
+                android:id="@+id/button_pinblock"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@+string/pinblock" />
+
+            <EditText
+                android:id="@+id/editText_pinblock_out"
+                android:layout_width="300sp"
+                android:layout_height="wrap_content" />
+        </TableRow>
+    </TableLayout>
+</RelativeLayout>

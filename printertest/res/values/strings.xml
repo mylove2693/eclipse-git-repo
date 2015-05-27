@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">printertest</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    
+    	<!-- printer -->
+	<string name="open_printer">open</string> 
+	<string name="close_printer">close</string> 
+	<string name="usb_printer_1">"usb printer 1"</string>    
+	<string name="usb_printer_2">"usb printer 2"</string>    
+	<string name="serial_printer">"serial printer"</string>    
+	<string name="printer_title">PRINTER</string>
+	
+
+</resources>
